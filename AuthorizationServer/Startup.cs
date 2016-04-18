@@ -16,6 +16,11 @@ namespace AuthorizationServer
                     accessTokenApp.Use<OAuthMiddleware>();
                     accessTokenApp.Run(Foo);
                 });
+
+                oauthApp.Map("/verify_token", verifyTokenApp =>
+                {
+                    verifyTokenApp.VerifyToken();
+                });
             });
         }
 

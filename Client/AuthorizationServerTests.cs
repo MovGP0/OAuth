@@ -68,9 +68,9 @@ namespace Client
         private async Task<HttpResponseMessage> GetTokenAsyncInternal()
         {
             var redirect = HttpUtility.UrlEncode(ResourceServerAddress);
-            var appId = "resourceServerId";
-            var clientAppSecret = "clientApplicationSecret";
-            
+            const string appId = "resourceServerId";
+            const string clientAppSecret = "clientApplicationSecret";
+
             var client = TestServer.HttpClient;
             client.BaseAddress = new Uri(AuthorizationServerAddress);
             client.DefaultRequestHeaders.Accept.Clear();
